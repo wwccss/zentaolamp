@@ -1,4 +1,6 @@
-tar zxvf $1/xampp.tar.gz
+source=$1
+product=$2
+tar zxvf $source/xampp.tar.gz
 cd lampp
 
 # rm useless files.
@@ -57,11 +59,6 @@ cd bin.bak
 cp htpasswd apachectl my_print_defaults mysql mysql.server mysqld_safe mysqldump php php-config phpize httpd gettext ../bin/
 cd ../
 rm -fr bin.bak
-
-# fix bug of the mysqld_safe
-#sed -e 's/\/opt\/lampp\/\/opt\/lampp\/sbin/\/opt\/lampp\/sbin/g' bin/mysqld_safe > bin/mysqld_safe.new
-#mv bin/mysqld_safe.new bin/mysqld_safe
-#chmod a+rx bin/mysqld_safe
 
 # rm useless binaries at sbin directory, keep mysqld.
 mv sbin sbin.bak
@@ -192,16 +189,18 @@ rm -fr modules/mod_usertrack.so
 rm -fr modules/mod_version.so
 rm -fr modules/mod_vhost_alias.so
 
-# copy the zentao code.
-mv ../../../zentaopms ./zentao
-
 # copy needed files.
 cp ../Makefile .
-cp ../start .
-cp ../start88 .
+if [ $product = 'xirang' ]; then
+  sed 's/zentao/xirang/' ../start   | sed 's/pms/eps/' > start
+  sed 's/zentao/xirang/' ../start88 | sed 's/pms/eps/' > start88
+else
+  cp ../start* ./
+fi  
 cp ../stop .
-#cp ../lamppctl ./lampp
-cp ../../windows/index.php htdocs/
+cp ../index.$product.php htdocs/index.php
+chmod a+rx start*
+chmod a+rx stop*
 
 # make the auth file
 mkdir auth
@@ -215,7 +214,7 @@ mkdir phpmyadmin/locale
 mv phpmyadmin/locale.bak/en_GB phpmyadmin/locale
 mv phpmyadmin/locale.bak/zh_* phpmyadmin/locale
 rm -fr phpmyadmin/locale.bak
-cp ../../windows/phpmyadmin.php phpmyadmin/config.inc.php
+cp ../phpmyadmin.php phpmyadmin/config.inc.php
 rm -fr phpmyadmin/examples
 rm -fr phpmyadmin/js/openlayers
 rm -fr phpmyadmin/libraries/tcpdf
