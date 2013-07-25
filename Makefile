@@ -24,6 +24,9 @@ common:
 zentaorelease:	
 	VERSION=$(shell head -n 1 zentao/VERSION)
 	sudo 7z a -sfx ZenTaoPMS.${VERSION}.linux.7z lampp
+xirangrelease:	
+	VERSION=$(shell head -n 1 xirang/VERSION)
+	sudo 7z a -sfx xirangEPS.${VERSION}.linux.7z lampp
 releaseclean:
 	sudo mv lampp lampp.bak
 	sudo mv lampp.bak/* .
