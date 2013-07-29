@@ -53,37 +53,40 @@ $clientLang = $lang->$acceptLang;
 ?>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
-<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-<meta http-equiv="refresh" content="300; url=/xirang/" />
-<title><?php echo $clientLang->title;?></title>
-<style>
-html {background-color:#06294e;}
-body {font-family: Tahoma; font-size:14px}
-table{margin-top:200px; background:white; border:none}
-tr, th, td{border:none}
-a{text-decoration:none}
-#welcome{font-size:20px}
-#logo{width:120px; border-right:1px solid #efefef}
-#links{padding-left:25px; font-size:14px}
-#links a{display:block; width:100px; height:25px; line-height:25px; float:left; margin-right:5px; border:1px solid gray; background:#efefef; text-align:center}
-#links #xirang{background:green; color:#efefef}
-#lang{background:#efefef; font-size:13px}
-</style>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+  <meta http-equiv="refresh" content="10; url=/xirang/" />
+  <title><?php echo $clientLang->title;?></title>
+  <style>
+    html {background-color:#06294e;}
+    body {font-family: Tahoma; font-size:14px}
+    table{margin-top:200px; background:white; border:none}
+    tr, th, td{border:none}
+    a{text-decoration:none}
+
+    #welcome{font-size:20px; border-bottom:1px solid #efefef; padding:10px}
+    #logo{width:120px; border-right:1px solid #efefef}
+    
+    #links{padding-left:25px; font-size:14px}
+    #links a{display:block; width:100px; height:25px; line-height:25px; float:left; margin-right:5px; border:1px solid gray; background:#efefef; text-align:center}
+    #links #xirang{background:green; color:#efefef}
+    
+    #lang{background:#efefef; font-size:13px}
+  </style>
 </head>
 <body>
-<table align='center' width='600'>
-  <tr><th colspan='2' id='welcome'><?php echo $clientLang->title;?></th></tr>
-  <tr>
-    <td id='logo'><img src='?mode=getlogo' /></td>
-    <td id='links'><?php foreach($clientLang->links as $linkID => $link) echo "<a id='$linkID' href='$link[link]' target='$link[target]'>$link[text]</a>";?></td>
-  </tr>   
-  <tr id='lang'>
-    <td colspan='2' align='right'>
-      <?php 
-      foreach($config->langs as $langCode => $langName) echo "<a href='?lang=$langCode'>$langName</a> ";
-      ?>
-    </td>
-  </tr>
-</table>
+  <table align='center' width='600'>
+    <tr><th colspan='2' id='welcome'><?php echo $clientLang->title;?></th></tr>
+    <tr>
+      <td id='logo'><img src='?mode=getlogo' /></td>
+      <td id='links'><?php foreach($clientLang->links as $linkID => $link) echo "<a id='$linkID' href='$link[link]' target='$link[target]'>$link[text]</a>";?></td>
+    </tr>   
+    <tr id='lang'>
+      <td colspan='2' align='right'>
+        <?php 
+        foreach($config->langs as $langCode => $langName) echo "<a href='?lang=$langCode'>$langName</a> ";
+        ?>
+      </td>
+    </tr>
+  </table>
 </body>
 </html>

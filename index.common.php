@@ -11,41 +11,33 @@ if(isset($_GET['mode']) and $_GET['mode'] == 'getlogo')
 $config->langs['cn'] = '简体';
 $config->langs['en'] = 'English';
 
-$lang->cn->title = '欢迎使用禅道集成运行环境！';
-
-$lang->cn->links['zentao']['link']       = '/zentao/';
-$lang->cn->links['zentao']['text']       = '访问禅道';
-$lang->cn->links['zentao']['target']     = '_self';
-
-$lang->cn->links['official']['link']     = 'http://www.zentao.net/';
-$lang->cn->links['official']['text']     = '禅道官网';
-$lang->cn->links['official']['target']   = '_blank';
-
-$lang->cn->links['phpmyadmin']['link']   = '/phpmyadmin/';
-$lang->cn->links['phpmyadmin']['text']   = '数据库管理';
-$lang->cn->links['phpmyadmin']['target'] = '_blank';
+$lang->cn->title = '欢迎使用禅道WAMP集成运行环境！';
 
 $lang->cn->links['phpinfo']['link']      = '?mode=phpinfo';
 $lang->cn->links['phpinfo']['text']      = 'PHP信息';
 $lang->cn->links['phpinfo']['target']    = '_blank';
 
-$lang->en->title = 'Welcome to use zentao!';
+$lang->cn->links['phpmyadmin']['link']   = '/phpmyadmin/';
+$lang->cn->links['phpmyadmin']['text']   = '数据库管理';
+$lang->cn->links['phpmyadmin']['target'] = '_blank';
 
-$lang->en->links['zentao']['link']       = '/zentao/';
-$lang->en->links['zentao']['text']       = 'XiRang';
-$lang->en->links['zentao']['target']     = '_self';
+$lang->cn->links['official']['link']     = 'http://www.zentao.net/';
+$lang->cn->links['official']['text']     = '官方网站';
+$lang->cn->links['official']['target']   = '_blank';
 
-$lang->en->links['official']['link']     = 'http://www.zentao.net/';
-$lang->en->links['official']['text']     = 'Community';
-$lang->en->links['official']['target']   = '_blank';
+$lang->en->title = 'Welcome to use zentao wamp!';
+
+$lang->en->links['phpinfo']['link']      = '?mode=phpinfo';
+$lang->en->links['phpinfo']['text']      = 'PHP';
+$lang->en->links['phpinfo']['target']    = '_blank';
 
 $lang->en->links['phpmyadmin']['link']   = '/phpmyadmin/';
 $lang->en->links['phpmyadmin']['text']   = 'MySQL';
 $lang->en->links['phpmyadmin']['target'] = '_blank';
 
-$lang->en->links['phpinfo']['link']      = '?mode=phpinfo';
-$lang->en->links['phpinfo']['text']      = 'PHP';
-$lang->en->links['phpinfo']['target']    = '_blank';
+$lang->en->links['official']['link']     = 'http://www.zentao.net/';
+$lang->en->links['official']['text']     = 'Community';
+$lang->en->links['official']['target']   = '_blank';
 
 $acceptLang = stripos($_SERVER['HTTP_ACCEPT_LANGUAGE'], 'zh-CN') !== false ? 'cn' : 'en';
 $acceptLang = isset($_GET['lang']) ? $_GET['lang'] : $acceptLang;
@@ -54,7 +46,6 @@ $clientLang = $lang->$acceptLang;
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
   <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-  <meta http-equiv="refresh" content="5; url=/zentao/" />
   <title><?php echo $clientLang->title;?></title>
   <style>
     html {background-color:#06294e;}
@@ -63,18 +54,17 @@ $clientLang = $lang->$acceptLang;
     tr, th, td{border:none}
     a{text-decoration:none}
 
-    #welcome{font-size:20px; border-bottom:1px solid #efefef; padding:10px}
+    #welcome{font-size:20px; border-bottom:1px solid #efefef; padding:5px}
     #logo{width:120px; border-right:1px solid #efefef}
-   
+    
     #links{padding-left:25px; font-size:14px}
     #links a{display:block; width:100px; height:25px; line-height:25px; float:left; margin-right:5px; border:1px solid gray; background:#efefef; text-align:center}
-    #links #zentao{background:green; color:#efefef}
     
     #lang{background:#efefef; font-size:13px}
   </style>
 </head>
 <body>
-  <table align='center' width='600'>
+  <table align='center' width='500'>
     <tr><th colspan='2' id='welcome'><?php echo $clientLang->title;?></th></tr>
     <tr>
       <td id='logo'><img src='?mode=getlogo' /></td>
