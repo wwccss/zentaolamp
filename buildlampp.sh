@@ -44,7 +44,13 @@ rm -fr etc/magic
 rm -fr etc/locales.conf
 
 # process httpd conf
-cp ../httpd.conf etc/httpd.conf
+if [ $product = 'common' ]; then
+    cp ../httpd.common.conf etc/httpd.conf
+elif [ $product = 'xirang' ]; then
+    sed 's/zentao/xirang/' ../httpd.product.conf > etc/httd.conf
+else
+    cp ../httpd.product.conf etc/httpd.conf
+fi  
 
 # process my.cnf
 cp ../my.cnf etc/my.cnf
@@ -191,12 +197,7 @@ rm -fr modules/mod_vhost_alias.so
 
 # copy needed files.
 cp ../Makefile .
-if [ $product = 'xirang' ]; then
-  sed 's/zentao/xirang/' ../start   | sed 's/pms/eps/' > start
-  sed 's/zentao/xirang/' ../start88 | sed 's/pms/eps/' > start88
-else
-  cp ../start* ./
-fi  
+./createControl.php $product
 cp ../stop .
 cp ../index.$product.php htdocs/index.php
 chmod a+rx start*
