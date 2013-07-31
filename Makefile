@@ -1,16 +1,19 @@
 all:help
-zentao:common zentaorelease
+zentao:prepare zentaorelease
+xirang:prepare xirangrelease
+common:prepare commonrelease
 help:
 	@echo "make lampp source=xxx product=zentao|xirang to build the common lampp package."
 	@echo make zentao to make a zentao release.
 	@echo make xirang to make a xirang release.
+	@echo make common to make a common release.
 	@echo make lamppclean to clean lampp directory.
 	@echo make releaseclean to clean zentao or xirang directory.
 lampp:
 	./buildlampp.sh $(source) $(product)
 lamppclean:
 	rm -fr lampp
-common:
+prepare:
 	sudo ./lampp stop
 	sudo rm -fr logs/*
 	sudo rm -fr var/mysql/*.err
@@ -27,6 +30,9 @@ zentaorelease:
 xirangrelease:	
 	VERSION=$(shell head -n 1 xirang/VERSION)
 	sudo 7z a -sfx xirangEPS.${VERSION}.linux.7z lampp
+commonrelease:	
+	VERSION=$(shell head -n 1 lib/VERSION)
+	sudo 7z a -sfx zentaolamp.${VERSION}.linux.7z lampp
 releaseclean:
 	sudo mv lampp lampp.bak
 	sudo mv lampp.bak/* .
