@@ -13,7 +13,7 @@ $apacheToPort   = 80;
 $mysqlFromPort  = 3308;
 $mysqlToPort    = 3306;
 
-file_put_contents('./lampp/start', createStart(file_get_contents('./start.tpl'), $product));
+file_put_contents('./start', createStart(file_get_contents('../start.tpl'), $product));
 
 /* Create start88 control file. */
 $apacheFromPort = 80;
@@ -21,7 +21,7 @@ $apacheToPort   = 88;
 $mysqlFromPort  = 3306;
 $mysqlToPort    = 3308;
 
-file_put_contents('./lampp/start88', createStart(file_get_contents('./start.tpl'), $product));
+file_put_contents('./start88', createStart(file_get_contents('../start.tpl'), $product));
 
 /**
  * Create start.
