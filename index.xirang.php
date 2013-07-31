@@ -12,6 +12,7 @@ $config->langs['cn'] = '简体';
 $config->langs['en'] = 'English';
 
 $lang->cn->title = '欢迎使用息壤集成运行环境！';
+$lang->cn->xampp = " <a href='http://www.apachefriends.org/en/xampp.html' target='_blank'>xampp</a>";
 
 $lang->cn->links['xirang']['link']       = '/xirang/';
 $lang->cn->links['xirang']['text']       = '访问息壤';
@@ -30,6 +31,7 @@ $lang->cn->links['phpinfo']['text']      = 'PHP信息';
 $lang->cn->links['phpinfo']['target']    = '_blank';
 
 $lang->en->title = 'Welcome to use xirang!';
+$lang->en->xampp = " <a href='http://www.apachefriends.org/en/xampp.html' target='_blank'>xampp</a> ";
 
 $lang->en->links['xirang']['link']       = '/xirang/';
 $lang->en->links['xirang']['text']       = 'XiRang';
@@ -70,7 +72,7 @@ $clientLang = $lang->$acceptLang;
     #links a{display:block; width:100px; height:25px; line-height:25px; float:left; margin-right:5px; border:1px solid gray; background:#efefef; text-align:center}
     #links #xirang{background:green; color:#efefef}
     
-    #lang{background:#efefef; font-size:13px}
+    #lang{background:#efefef; font-size:13px; padding:3px}
   </style>
 </head>
 <body>
@@ -82,9 +84,8 @@ $clientLang = $lang->$acceptLang;
     </tr>   
     <tr id='lang'>
       <td colspan='2' align='right'>
-        <?php 
-        foreach($config->langs as $langCode => $langName) echo "<a href='?lang=$langCode'>$langName</a> ";
-        ?>
+        <div style='float:left'><?php echo $clientLang->xampp;?></div>
+        <div style='float:right;'><?php foreach($config->langs as $langCode => $langName) echo "<a href='?lang=$langCode'>$langName</a> ";?></div>
       </td>
     </tr>
   </table>

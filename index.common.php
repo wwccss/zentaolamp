@@ -12,6 +12,7 @@ $config->langs['cn'] = '简体';
 $config->langs['en'] = 'English';
 
 $lang->cn->title = '欢迎使用禅道WAMP集成运行环境！';
+$lang->cn->xampp = " <a href='http://www.apachefriends.org/en/xampp.html' target='_blank'>xampp</a>";
 
 $lang->cn->links['phpinfo']['link']      = '?mode=phpinfo';
 $lang->cn->links['phpinfo']['text']      = 'PHP信息';
@@ -26,6 +27,7 @@ $lang->cn->links['official']['text']     = '官方网站';
 $lang->cn->links['official']['target']   = '_blank';
 
 $lang->en->title = 'Welcome to use zentao wamp!';
+$lang->en->xampp = " <a href='http://www.apachefriends.org/en/xampp.html' target='_blank'>xampp</a> ";
 
 $lang->en->links['phpinfo']['link']      = '?mode=phpinfo';
 $lang->en->links['phpinfo']['text']      = 'PHP';
@@ -71,10 +73,9 @@ $clientLang = $lang->$acceptLang;
       <td id='links'><?php foreach($clientLang->links as $linkID => $link) echo "<a id='$linkID' href='$link[link]' target='$link[target]'>$link[text]</a>";?></td>
     </tr>   
     <tr id='lang'>
-      <td colspan='2' align='right'>
-        <?php 
-        foreach($config->langs as $langCode => $langName) echo "<a href='?lang=$langCode'>$langName</a> ";
-        ?>
+      <td colspan='2'>
+        <div style='float:left'><?php echo $clientLang->xampp;?></div>
+        <div style='float:right;'><?php foreach($config->langs as $langCode => $langName) echo "<a href='?lang=$langCode'>$langName</a> ";?></div>
       </td>
     </tr>
   </table>
