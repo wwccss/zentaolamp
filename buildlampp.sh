@@ -47,9 +47,9 @@ rm -frv etc/locales.conf
 if [ $product = 'common' ]; then
     cp -v ../httpd.common.conf etc/httpd.conf
 elif [ $product = 'xirang' ]; then
-    sed 's/zentao/xirang/' ../httpd.product.conf > etc/httd.conf
+    cp -v ../httpd.xirang.conf etc/httpd.conf
 else
-    cp -v ../httpd.product.conf etc/httpd.conf
+    cp -v ../httpd.zentao.conf etc/httpd.conf
 fi  
 
 # process my.cnf
