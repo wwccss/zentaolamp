@@ -14,7 +14,7 @@ $config->langs['en'] = 'English';
 $lang->cn->title = '欢迎使用息壤集成运行环境！';
 $lang->cn->xampp = " <a href='http://www.apachefriends.org/en/xampp.html' target='_blank'>xampp</a>";
 
-$lang->cn->links['xirang']['link']       = '/xirang/';
+$lang->cn->links['xirang']['link']       = '/';
 $lang->cn->links['xirang']['text']       = '访问息壤';
 $lang->cn->links['xirang']['target']     = '_self';
 
@@ -33,7 +33,7 @@ $lang->cn->links['phpinfo']['target']    = '_blank';
 $lang->en->title = 'Welcome to use xirang!';
 $lang->en->xampp = " <a href='http://www.apachefriends.org/en/xampp.html' target='_blank'>xampp</a> ";
 
-$lang->en->links['xirang']['link']       = '/xirang/';
+$lang->en->links['xirang']['link']       = '/';
 $lang->en->links['xirang']['text']       = 'XiRang';
 $lang->en->links['xirang']['target']     = '_self';
 
