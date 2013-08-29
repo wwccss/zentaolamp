@@ -11,12 +11,13 @@ if(isset($_GET['mode']) and $_GET['mode'] == 'getlogo')
 $config->langs['cn'] = '简体';
 $config->langs['en'] = 'English';
 
-$lang->cn->title = '欢迎使用禅道集成运行环境！';
-$lang->cn->xampp = " <a href='http://www.apachefriends.org/en/xampp.html' target='_blank'>xampp</a>";
-
 $lang->cn->links['zentao']['link']       = '/zentao/';
 $lang->cn->links['zentao']['text']       = '开源版';
 $lang->cn->links['zentao']['target']     = '_self';
+
+$lang->cn->links['zentaopro']['link']    = '/pro/';
+$lang->cn->links['zentaopro']['text']    = '专业版';
+$lang->cn->links['zentaopro']['target']  = '_self';
 
 $lang->cn->links['zentaostory']['link']   = '/story/';
 $lang->cn->links['zentaostory']['text']   = '需求管理';
@@ -30,28 +31,19 @@ $lang->cn->links['zentaotest']['link']    = '/test/';
 $lang->cn->links['zentaotest']['text']    = '测试管理';
 $lang->cn->links['zentaotest']['target']  = '_self';
 
-$lang->cn->links['zentaopro']['link']    = '/pro/';
-$lang->cn->links['zentaopro']['text']    = '专业版';
-$lang->cn->links['zentaopro']['target']  = '_self';
-
-$lang->cn->links['official']['link']     = 'http://www.zentao.net/';
-$lang->cn->links['official']['text']     = '禅道官网';
-$lang->cn->links['official']['target']   = '_blank';
-
-$lang->cn->links['phpmyadmin']['link']   = '/phpmyadmin/';
-$lang->cn->links['phpmyadmin']['text']   = '数据库管理';
-$lang->cn->links['phpmyadmin']['target'] = '_blank';
-
-$lang->cn->links['phpinfo']['link']      = '?mode=phpinfo';
-$lang->cn->links['phpinfo']['text']      = 'PHP信息';
-$lang->cn->links['phpinfo']['target']    = '_blank';
-
-$lang->en->title = 'Welcome to use zentao!';
-$lang->en->xampp = " <a href='http://www.apachefriends.org/en/xampp.html' target='_blank'>xampp</a> ";
+$lang->cn->title = '欢迎使用禅道集成运行环境！';
+$lang->cn->xampp      = " <a href='http://www.apachefriends.org/en/xampp.html' target='_blank'>xampp</a>";
+$lang->cn->official   = " <a href='http://www.zentao.net' target='_blank'>禅道官网</a>";
+$lang->cn->phpmyadmin = "<a href='/phpmyadmin/' target='_blank'>数据库管理</a>";
+$lang->cn->phpinfo    = "<a href='?mode=phpinfo' target='_blank'>PHP信息</a>";
 
 $lang->en->links['zentao']['link']       = '/zentao/';
 $lang->en->links['zentao']['text']       = 'Zentao';
 $lang->en->links['zentao']['target']     = '_self';
+
+$lang->en->links['zentaopro']['link']    = '/pro/';
+$lang->en->links['zentaopro']['text']    = 'Pro version';
+$lang->en->links['zentaopro']['target']  = '_self';
 
 $lang->en->links['zentaostory']['link']   = '/story/';
 $lang->en->links['zentaostory']['text']   = 'Story manage';
@@ -65,21 +57,11 @@ $lang->en->links['zentaotest']['link']    = '/test/';
 $lang->en->links['zentaotest']['text']    = 'Test manage';
 $lang->en->links['zentaotest']['target']  = '_self';
 
-$lang->en->links['zentaopro']['link']    = '/pro/';
-$lang->en->links['zentaopro']['text']    = 'Pro version';
-$lang->en->links['zentaopro']['target']  = '_self';
-
-$lang->en->links['official']['link']     = 'http://www.zentao.net/';
-$lang->en->links['official']['text']     = 'Community';
-$lang->en->links['official']['target']   = '_blank';
-
-$lang->en->links['phpmyadmin']['link']   = '/phpmyadmin/';
-$lang->en->links['phpmyadmin']['text']   = 'MySQL';
-$lang->en->links['phpmyadmin']['target'] = '_blank';
-
-$lang->en->links['phpinfo']['link']      = '?mode=phpinfo';
-$lang->en->links['phpinfo']['text']      = 'PHP';
-$lang->en->links['phpinfo']['target']    = '_blank';
+$lang->en->title      = 'Welcome to use zentao!';
+$lang->en->xampp      = " <a href='http://www.apachefriends.org/en/xampp.html' target='_blank'>xampp</a> ";
+$lang->en->official   = " <a href='http://www.zentao.net/en' target='_blank'>Community</a>";
+$lang->en->phpmyadmin = "<a href='/phpmyadmin/' target='_blank'>MySQL</a>";
+$lang->en->phpinfo    = "<a href='?mode=phpinfo' target='_blank'>PHP</a>";
 
 $acceptLang = stripos($_SERVER['HTTP_ACCEPT_LANGUAGE'], 'zh-CN') !== false ? 'cn' : 'en';
 $acceptLang = isset($_GET['lang']) ? $_GET['lang'] : $acceptLang;
@@ -95,7 +77,7 @@ $clientLang = $lang->$acceptLang;
     body {font-family: Tahoma; font-size:14px}
     table{margin-top:200px; background:white; border:none}
     tr, th, td{border:none}
-    a{text-decoration:none; margin:2px}
+    a{text-decoration:none;}
 
     #welcome{font-size:20px; border-bottom:1px solid #efefef; padding:10px}
     #logo{width:120px; border-right:1px solid #efefef}
@@ -108,7 +90,7 @@ $clientLang = $lang->$acceptLang;
   </style>
 </head>
 <body>
-  <table align='center' width='600'>
+  <table align='center' width='700'>
     <tr><th colspan='2' id='welcome'><?php echo $clientLang->title;?></th></tr>
     <tr>
       <td id='logo'><img src='?mode=getlogo' /></td>
@@ -116,7 +98,7 @@ $clientLang = $lang->$acceptLang;
     </tr>   
     <tr id='lang'>
       <td colspan='2'>
-        <div style='float:left'><?php echo $clientLang->xampp;?></div>
+        <div style='float:left'><?php echo $clientLang->xampp .' ' .  $clientLang->official . ' ' . $clientLang->phpmyadmin . ' ' . $clientLang->phpinfo;?></div>
         <div style='float:right;'><?php foreach($config->langs as $langCode => $langName) echo "<a href='?lang=$langCode'>$langName</a> ";?></div>
       </td>
     </tr>
