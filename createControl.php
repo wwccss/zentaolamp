@@ -40,17 +40,5 @@ function createStart($startTPL, $product)
     $startTPL = str_replace('{mysqlFromPort}',  $mysqlFromPort,  $startTPL);
     $startTPL = str_replace('{mysqlToPort}',    $mysqlToPort,    $startTPL);
 
-    if($product == 'zentao' or $product == 'xirang')
-    {
-        $startTPL = str_replace('{product}', $product, $startTPL);
-        return $startTPL;
-    }
-
-    $startTPL = explode("\n", $startTPL);
-    foreach($startTPL as $key => $line)
-    {
-        if(strpos($line, '{product}') !== false) unset($startTPL[$key]);
-    }
-
-    return join("\n", $startTPL);
+    return $startTPL;
 }

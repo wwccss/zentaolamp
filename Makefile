@@ -3,7 +3,7 @@ zentao:prepare zentaorelease
 xirang:prepare xirangrelease
 common:prepare commonrelease
 help:
-	@echo "make lampp source=xxx product=zentao|xirang to build the common lampp package."
+	@echo "make lampp source=xxx product=zentao|xirang|common to build the lampp package."
 	@echo make zentao to make a zentao release.
 	@echo make xirang to make a xirang release.
 	@echo make common to make a common release.
