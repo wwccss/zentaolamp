@@ -98,8 +98,8 @@ $clientLang = $lang->$acceptLang;
     </tr>   
     <tr id='lang'>
       <td colspan='2'>
-        <div style='float:left'><?php echo $clientLang->xampp .' ' .  $clientLang->official . ' ' . $clientLang->phpmyadmin . ' ' . $clientLang->phpinfo;?></div>
-        <div style='float:right;'><?php foreach($config->langs as $langCode => $langName) echo "<a href='?lang=$langCode'>$langName</a> ";?></div>
+        <div style='float:left;'><?php foreach($config->langs as $langCode => $langName) echo "<a href='?lang=$langCode'>$langName</a> ";?></div>
+        <div style='float:right'><?php echo $clientLang->xampp .' ' .  $clientLang->official . ' ' . $clientLang->phpmyadmin . ' ' . $clientLang->phpinfo;?></div>
       </td>
     </tr>
   </table>
