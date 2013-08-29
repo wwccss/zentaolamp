@@ -15,8 +15,24 @@ $lang->cn->title = '欢迎使用禅道集成运行环境！';
 $lang->cn->xampp = " <a href='http://www.apachefriends.org/en/xampp.html' target='_blank'>xampp</a>";
 
 $lang->cn->links['zentao']['link']       = '/zentao/';
-$lang->cn->links['zentao']['text']       = '访问禅道';
+$lang->cn->links['zentao']['text']       = '开源版';
 $lang->cn->links['zentao']['target']     = '_self';
+
+$lang->cn->links['zentaostory']['link']   = '/story/';
+$lang->cn->links['zentaostory']['text']   = '需求管理';
+$lang->cn->links['zentaostory']['target'] = '_self';
+
+$lang->cn->links['zentaotask']['link']    = '/task/';
+$lang->cn->links['zentaotask']['text']    = '任务管理';
+$lang->cn->links['zentaotask']['target']  = '_self';
+
+$lang->cn->links['zentaotest']['link']    = '/test/';
+$lang->cn->links['zentaotest']['text']    = '测试管理';
+$lang->cn->links['zentaotest']['target']  = '_self';
+
+$lang->cn->links['zentaopro']['link']    = '/pro/';
+$lang->cn->links['zentaopro']['text']    = '专业版';
+$lang->cn->links['zentaopro']['target']  = '_self';
 
 $lang->cn->links['official']['link']     = 'http://www.zentao.net/';
 $lang->cn->links['official']['text']     = '禅道官网';
@@ -34,8 +50,24 @@ $lang->en->title = 'Welcome to use zentao!';
 $lang->en->xampp = " <a href='http://www.apachefriends.org/en/xampp.html' target='_blank'>xampp</a> ";
 
 $lang->en->links['zentao']['link']       = '/zentao/';
-$lang->en->links['zentao']['text']       = 'XiRang';
+$lang->en->links['zentao']['text']       = 'Zentao';
 $lang->en->links['zentao']['target']     = '_self';
+
+$lang->en->links['zentaostory']['link']   = '/story/';
+$lang->en->links['zentaostory']['text']   = 'Story manage';
+$lang->en->links['zentaostory']['target'] = '_self';
+
+$lang->en->links['zentaotask']['link']    = '/task/';
+$lang->en->links['zentaotask']['text']    = 'Task mange';
+$lang->en->links['zentaotask']['target']  = '_self';
+
+$lang->en->links['zentaotest']['link']    = '/test/';
+$lang->en->links['zentaotest']['text']    = 'Test manage';
+$lang->en->links['zentaotest']['target']  = '_self';
+
+$lang->en->links['zentaopro']['link']    = '/pro/';
+$lang->en->links['zentaopro']['text']    = 'Pro version';
+$lang->en->links['zentaopro']['target']  = '_self';
 
 $lang->en->links['official']['link']     = 'http://www.zentao.net/';
 $lang->en->links['official']['text']     = 'Community';
@@ -63,7 +95,7 @@ $clientLang = $lang->$acceptLang;
     body {font-family: Tahoma; font-size:14px}
     table{margin-top:200px; background:white; border:none}
     tr, th, td{border:none}
-    a{text-decoration:none}
+    a{text-decoration:none; margin:2px}
 
     #welcome{font-size:20px; border-bottom:1px solid #efefef; padding:10px}
     #logo{width:120px; border-right:1px solid #efefef}
