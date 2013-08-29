@@ -25,14 +25,11 @@ prepare:
 	sudo chmod a+rx lampp/start*
 	sudo chmod a+rx lampp/start88
 zentaorelease:	
-	VERSION=$(shell head -n 1 zentao/VERSION)
-	sudo 7z a -sfx ZenTaoPMS.${VERSION}.linux.7z lampp
+	sudo 7z a -sfx ZenTaoPMS.`head -n 1 lampp/zentao/VERSION`.linux.7z lampp
 xirangrelease:	
-	VERSION=$(shell head -n 1 xirang/VERSION)
-	sudo 7z a -sfx xirangEPS.${VERSION}.linux.7z lampp
+	sudo 7z a -sfx xirangEPS.`head -n 1 lampp/xirang/VERSION`.linux.7z lampp
 commonrelease:	
-	VERSION=$(shell head -n 1 lib/VERSION)
-	sudo 7z a -sfx zentaolamp.${VERSION}.linux.7z lampp
+	sudo 7z a -sfx zentaolamp.`lampp/lib/VERSION`.linux.7z lampp
 releaseclean:
 	sudo mv lampp lampp.bak
 	sudo mv lampp.bak/* .
