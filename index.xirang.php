@@ -11,15 +11,15 @@ if(isset($_GET['mode']) and $_GET['mode'] == 'getlogo')
 $config->langs['cn'] = '简体';
 $config->langs['en'] = 'English';
 
-$lang->cn->title = '欢迎使用息壤集成运行环境！';
+$lang->cn->title = '欢迎使用蝉知集成运行环境！';
 $lang->cn->xampp = " <a href='http://www.apachefriends.org/en/xampp.html' target='_blank'>xampp</a>";
 
 $lang->cn->links['xirang']['link']       = '/';
-$lang->cn->links['xirang']['text']       = '访问息壤';
+$lang->cn->links['xirang']['text']       = '访问蝉知';
 $lang->cn->links['xirang']['target']     = '_self';
 
-$lang->cn->links['official']['link']     = 'http://www.xirang.biz/';
-$lang->cn->links['official']['text']     = '息壤官网';
+$lang->cn->links['official']['link']     = 'http://www.chanzhi.org/';
+$lang->cn->links['official']['text']     = '蝉知官网';
 $lang->cn->links['official']['target']   = '_blank';
 
 $lang->cn->links['phpmyadmin']['link']   = '/phpmyadmin/';
@@ -30,14 +30,14 @@ $lang->cn->links['phpinfo']['link']      = '?mode=phpinfo';
 $lang->cn->links['phpinfo']['text']      = 'PHP信息';
 $lang->cn->links['phpinfo']['target']    = '_blank';
 
-$lang->en->title = 'Welcome to use xirang!';
+$lang->en->title = 'Welcome to use chanzhi!';
 $lang->en->xampp = " <a href='http://www.apachefriends.org/en/xampp.html' target='_blank'>xampp</a> ";
 
 $lang->en->links['xirang']['link']       = '/';
-$lang->en->links['xirang']['text']       = 'XiRang';
+$lang->en->links['xirang']['text']       = 'ChanZhi';
 $lang->en->links['xirang']['target']     = '_self';
 
-$lang->en->links['official']['link']     = 'http://www.xirang.biz/';
+$lang->en->links['official']['link']     = 'http://www.chanzhi.org/';
 $lang->en->links['official']['text']     = 'Community';
 $lang->en->links['official']['target']   = '_blank';
 
