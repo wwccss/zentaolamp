@@ -4,7 +4,7 @@
  * This is is used to create start and start88 control files.  
  */
 /* Judge argv count and get product var. */
-if(count($argv) != 2) die('./createControl.php product=zentao|xirang|common');
+if(count($argv) != 2) die('./createControl.php product=zentao|chanzhi|common');
 $product = $argv[1];
 
 /* Create start control file. */

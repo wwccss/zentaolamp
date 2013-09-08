@@ -30,7 +30,7 @@ ls zentaopro/config/my.php   > /dev/null 2>&1 && sed -i 's/{mysqlFromPort}/{mysq
 ls zentaostory/config/my.php > /dev/null 2>&1 && sed -i 's/{mysqlFromPort}/{mysqlToPort}/g' zentaostory/config/my.php
 ls zentaotask/config/my.php  > /dev/null 2>&1 && sed -i 's/{mysqlFromPort}/{mysqlToPort}/g' zentaotask/config/my.php
 ls zentaotest/config/my.php  > /dev/null 2>&1 && sed -i 's/{mysqlFromPort}/{mysqlToPort}/g' zentaotest/config/my.php
-ls xirang/config/my.php      > /dev/null 2>&1 && sed -i 's/{mysqlFromPort}/{mysqlToPort}/g' xirang/config/my.php
+ls chanzhi/config/my.php     > /dev/null 2>&1 && sed -i 's/{mysqlFromPort}/{mysqlToPort}/g' chanzhi/config/my.php
 
 # change directory permissions.
 chmod a+rx lampp
@@ -62,7 +62,7 @@ changePermission zentaopro
 changePermission zentaostory
 changePermission zentaotask
 changePermission zentaotest
-changePermission xirang
+changePermission chanzhi
 
 # start apache, mysql.
 ./lampp startapache

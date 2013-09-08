@@ -46,8 +46,8 @@ rm -frv etc/locales.conf
 # process httpd conf
 if [ $product = 'common' ]; then
     cp -v ../httpd.common.conf etc/httpd.conf
-elif [ $product = 'xirang' ]; then
-    cp -v ../httpd.xirang.conf etc/httpd.conf
+elif [ $product = 'chanzhi' ]; then
+    cp -v ../httpd.chanzhi.conf etc/httpd.conf
 else
     cp -v ../httpd.zentao.conf etc/httpd.conf
 fi  
