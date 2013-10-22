@@ -18,6 +18,7 @@ rm -frv temp/*
 rm -frv apache2
 rm -frv ctlscript.sh
 rm -frv manager-linux.run
+rm -frv manager-linux-x64.run
 rm -frv pear
 rm -frv proftpd
 rm -frv properties.ini
