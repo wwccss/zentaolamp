@@ -111,9 +111,18 @@ cp -v lib/libicuuc.so.48 libnew/
 cp -v lib/libicudata.so.48  libnew/
 cp -v lib/libicuio.so.48 libnew/
 cp -v lib/libbz2.so libnew/
+cp -v lib/libpq.so.5.5 libnew/
+cp -v lib/libapreq2.so.3.7.1 libnew/
 
 rm -frv lib
 mv libnew lib
+
+cd lib
+ln -s libpq.so.5.5 libpq.so.5
+ln -s libpq.so.5.5 libpq.so
+ln -s libapreq2.so.3.7.1 libapreq2.so.3
+ln -s libapreq2.so.3.7.1 libapreq2.so
+cd ../
 
 # process var directory.
 rm -frv var/perl

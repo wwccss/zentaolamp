@@ -70,7 +70,6 @@ $clientLang = $lang->$acceptLang;
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
   <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-  <meta http-equiv="refresh" content="5; url=/zentao/" />
   <title><?php echo $clientLang->title;?></title>
   <style>
     html {background-color:#06294e;}
