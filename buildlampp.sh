@@ -235,3 +235,10 @@ rm -frv phpmyadmin/doc
 
 # copy the ioncube loader.
 cp -v ../*.so lib/
+
+# change php_ioncube.so by x64 or x86.
+if [ `uname -m|grep -e 64` ]; then
+  mv lib/php_ioncube_x64.so lib/php_ioncube.so
+else
+  rm lib/php_ioncube_x64.so
+fi
