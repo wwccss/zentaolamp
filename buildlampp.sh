@@ -228,7 +228,6 @@ rm -frv phpmyadmin/locale.bak
 cp -v ../phpmyadmin.php phpmyadmin/config.inc.php
 rm -frv phpmyadmin/examples
 rm -frv phpmyadmin/js/openlayers
-rm -frv phpmyadmin/libraries/tcpdf
 rm -frv phpmyadmin/Documentation*
 rm -frv phpmyadmin/themes/original
 rm -frv phpmyadmin/doc
