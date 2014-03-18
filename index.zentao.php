@@ -19,18 +19,6 @@ $lang->cn->links['zentaopro']['link']    = '/pro/';
 $lang->cn->links['zentaopro']['text']    = '专业版';
 $lang->cn->links['zentaopro']['target']  = '_self';
 
-$lang->cn->links['zentaostory']['link']   = '/story/';
-$lang->cn->links['zentaostory']['text']   = '需求管理';
-$lang->cn->links['zentaostory']['target'] = '_self';
-
-$lang->cn->links['zentaotask']['link']    = '/task/';
-$lang->cn->links['zentaotask']['text']    = '任务管理';
-$lang->cn->links['zentaotask']['target']  = '_self';
-
-$lang->cn->links['zentaotest']['link']    = '/test/';
-$lang->cn->links['zentaotest']['text']    = '测试管理';
-$lang->cn->links['zentaotest']['target']  = '_self';
-
 $lang->cn->title = '欢迎使用禅道集成运行环境！';
 $lang->cn->xampp      = " <a href='http://www.apachefriends.org/en/xampp.html' target='_blank'>xampp</a>";
 $lang->cn->official   = " <a href='http://www.zentao.net' target='_blank'>禅道官网</a>";
@@ -45,18 +33,6 @@ $lang->en->links['zentaopro']['link']    = '/pro/';
 $lang->en->links['zentaopro']['text']    = 'Pro version';
 $lang->en->links['zentaopro']['target']  = '_self';
 
-$lang->en->links['zentaostory']['link']   = '/story/';
-$lang->en->links['zentaostory']['text']   = 'Story manage';
-$lang->en->links['zentaostory']['target'] = '_self';
-
-$lang->en->links['zentaotask']['link']    = '/task/';
-$lang->en->links['zentaotask']['text']    = 'Task mange';
-$lang->en->links['zentaotask']['target']  = '_self';
-
-$lang->en->links['zentaotest']['link']    = '/test/';
-$lang->en->links['zentaotest']['text']    = 'Test manage';
-$lang->en->links['zentaotest']['target']  = '_self';
-
 $lang->en->title      = 'Welcome to use zentao!';
 $lang->en->xampp      = " <a href='http://www.apachefriends.org/en/xampp.html' target='_blank'>xampp</a> ";
 $lang->en->official   = " <a href='http://www.zentao.net/en' target='_blank'>Community</a>";
@@ -66,6 +42,7 @@ $lang->en->phpinfo    = "<a href='?mode=phpinfo' target='_blank'>PHP</a>";
 $acceptLang = stripos($_SERVER['HTTP_ACCEPT_LANGUAGE'], 'zh-CN') !== false ? 'cn' : 'en';
 $acceptLang = isset($_GET['lang']) ? $_GET['lang'] : $acceptLang;
 $clientLang = $lang->$acceptLang;
+
 ?>
 <html xmlns='http://www.w3.org/1999/xhtml'>
 <head>
@@ -88,6 +65,7 @@ $clientLang = $lang->$acceptLang;
     #lang{background:#efefef; font-size:13px}
   </style>
 </head>
+<script src='../zentao/js/jquery/lib.js' type='text/javascript'></script>
 <body>
   <table align='center' width='700'>
     <tr><th colspan='2' id='welcome'><?php echo $clientLang->title;?></th></tr>
@@ -103,4 +81,14 @@ $clientLang = $lang->$acceptLang;
     </tr>
   </table>
 </body>
+<script>
+$(function()
+{
+	$.getJSON('/pro/api-getProperties.html', function(data)
+	{
+		if(data.company == 'try')$('#zentaopro').append('<?php echo $_GET['lang'] == 'en' ? ' try' : ' 试用'?>');
+		$('#zentaopro').attr('title', "到期时间：" + data.expireDate + '，授权人数：' + data.user + '人');
+	});
+});
+</script>
 </html>
