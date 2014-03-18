@@ -84,10 +84,18 @@ $clientLang = $lang->$acceptLang;
 <script>
 $(function()
 {
-	$.getJSON('/pro/api-getProperties.html', function(data)
+	$.getJSON('/zentao/api-getLicenses.html', function(data)
 	{
-		if(data.company == 'try')$('#zentaopro').append('<?php echo $_GET['lang'] == 'en' ? ' try' : ' 试用'?>');
-		$('#zentaopro').attr('title', "到期时间：" + data.expireDate + '，授权人数：' + data.user + '人');
+		if(data.company == 'try') $('#zentaopro').append('<?php echo $_GET['lang'] == 'en' ? ' try' : ' 试用'?>');
+        <?php
+        $allLife    = $_GET['lang'] == 'en' ? 'All Life' : '永久授权';
+        $expireDate = $_GET['lang'] == 'en' ? 'Expire Date : ' : '到期时间：';
+        $unlimited  = $_GET['lang'] == 'en' ? 'Unlimited' : '不限人数';
+        $limitUser  = $_GET['lang'] == 'en' ? 'Authorized : ' : '授权人数：';
+        ?>
+        var expireDate = data.expireDate.toLowerCase() == 'all life' ? '<?php echo $allLife;?>' : '<?php echo $expireDate;?>' + data.expireDate;
+        var users      = data.user == 0 ? '<?php echo $unlimited;?>' : '<?php echo $limitUser;?>' + data.user;
+		$('#zentaopro').attr('title', expireDate + ' ' + users);
 	});
 });
 </script>
