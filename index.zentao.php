@@ -58,8 +58,8 @@ $clientLang = $lang->$acceptLang;
     #welcome{font-size:20px; border-bottom:1px solid #efefef; padding:10px}
     #logo{width:120px; border-right:1px solid #efefef}
    
-    #links{padding-left:25px; font-size:14px}
-    #links a{display:block; width:100px; height:25px; line-height:25px; float:left; margin-right:5px; border:1px solid gray; background:#efefef; text-align:center}
+    #links{padding-left:110px; font-size:14px;}
+    #links a{display:block; width:100px; height:25px; line-height:25px; float:left; margin-right:10px; border:1px solid gray; background:#efefef; text-align:center}
     #links #zentao{background:green; color:#efefef}
     
     #lang{background:#efefef; font-size:13px}
@@ -84,9 +84,9 @@ $clientLang = $lang->$acceptLang;
 <script>
 $(function()
 {
-	$.getJSON('/zentao/api-getLicenses.html', function(data)
+	$.getJSON('/pro/api-getLicenses.html', function(data)
 	{
-		if(data.company == 'try') $('#zentaopro').append('<?php echo $_GET['lang'] == 'en' ? ' try' : ' 试用'?>');
+        if(data.company == 'try') $('#zentaopro').append('<?php echo $_GET['lang'] == 'en' ? ' try' : ' 试用'?>');
         <?php
         $allLife    = $_GET['lang'] == 'en' ? 'All Life' : '永久授权';
         $expireDate = $_GET['lang'] == 'en' ? 'Expire Date : ' : '到期时间：';
