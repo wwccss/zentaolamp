@@ -86,6 +86,7 @@ $(function()
 {
 	$.getJSON('/pro/api-getLicenses.html', function(data)
 	{
+    	if(!data) return false;
         if(data.company == 'try') $('#zentaopro').append('<?php echo $_GET['lang'] == 'en' ? ' try' : ' 试用'?>');
         <?php
         $allLife    = $_GET['lang'] == 'en' ? 'All Life' : '永久授权';

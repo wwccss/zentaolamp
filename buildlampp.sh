@@ -83,6 +83,7 @@ rm -frv share.bak
 
 # process lib directory.
 mkdir libnew
+mkdir libnew/php
 awk -F'-' '{print $1}' lib/VERSION > libnew/VERSION
 cp -v lib/libapr-1.so.0 libnew/
 cp -v lib/libaprutil-1.so.0 libnew/
@@ -91,6 +92,7 @@ cp -v lib/libcurl.so.4 libnew/
 cp -v lib/libexslt.so.0 libnew/
 cp -v lib/libfrveetype.so.6 libnew/
 cp -v lib/libgcc_s.so.1 libnew/
+cp -v lib/libgdbm.so.3 libnew/
 cp -v lib/libiconv.so.2 libnew/
 cp -v lib/liblber-2.4.so.2.5.4 libnew/
 cp -v lib/libmcrypt.so.4 libnew/
@@ -114,6 +116,8 @@ cp -v lib/libicuio.so.48 libnew/
 cp -v lib/libbz2.so libnew/
 cp -v lib/libpq.so.5.5 libnew/
 cp -v lib/libapreq2.so.3.7.1 libnew/
+cp -rv lib/mysql libnew/
+cp -rv lib/php/extensions libnew/php
 
 rm -frv lib
 mv libnew lib
