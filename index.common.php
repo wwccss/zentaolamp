@@ -1,7 +1,6 @@
 <?php
 error_reporting(0);
 
-if(isset($_GET['mode']) and $_GET['mode'] == 'phpinfo') die(phpinfo());
 if(isset($_GET['mode']) and $_GET['mode'] == 'getlogo')
 {
     header('Content-type: image/png');  
@@ -14,10 +13,6 @@ $config->langs['en'] = 'English';
 $lang->cn->title = '欢迎使用禅道WAMP集成运行环境！';
 $lang->cn->xampp = " <a href='http://www.apachefriends.org/en/xampp.html' target='_blank'>xampp</a>";
 
-$lang->cn->links['phpinfo']['link']      = '?mode=phpinfo';
-$lang->cn->links['phpinfo']['text']      = 'PHP信息';
-$lang->cn->links['phpinfo']['target']    = '_blank';
-
 $lang->cn->links['phpmyadmin']['link']   = '/phpmyadmin/';
 $lang->cn->links['phpmyadmin']['text']   = '数据库管理';
 $lang->cn->links['phpmyadmin']['target'] = '_blank';
@@ -28,10 +23,6 @@ $lang->cn->links['official']['target']   = '_blank';
 
 $lang->en->title = 'Welcome to use zentao wamp!';
 $lang->en->xampp = " <a href='http://www.apachefriends.org/en/xampp.html' target='_blank'>xampp</a> ";
-
-$lang->en->links['phpinfo']['link']      = '?mode=phpinfo';
-$lang->en->links['phpinfo']['text']      = 'PHP';
-$lang->en->links['phpinfo']['target']    = '_blank';
 
 $lang->en->links['phpmyadmin']['link']   = '/phpmyadmin/';
 $lang->en->links['phpmyadmin']['text']   = 'MySQL';

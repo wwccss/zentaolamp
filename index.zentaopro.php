@@ -10,10 +10,6 @@ if(isset($_GET['mode']) and $_GET['mode'] == 'getlogo')
 $config->langs['cn'] = '简体';
 $config->langs['en'] = 'English';
 
-$lang->cn->links['zentao']['link']       = '/zentao/';
-$lang->cn->links['zentao']['text']       = '开源版';
-$lang->cn->links['zentao']['target']     = '_self';
-
 $lang->cn->links['zentaopro']['link']    = '/pro/';
 $lang->cn->links['zentaopro']['text']    = '专业版';
 $lang->cn->links['zentaopro']['target']  = '_self';
@@ -22,10 +18,6 @@ $lang->cn->title = '欢迎使用禅道集成运行环境！';
 $lang->cn->xampp      = " <a href='http://www.apachefriends.org/en/xampp.html' target='_blank'>xampp</a>";
 $lang->cn->official   = " <a href='http://www.zentao.net' target='_blank'>禅道官网</a>";
 $lang->cn->phpmyadmin = "<a href='/phpmyadmin/' target='_blank'>数据库管理</a>";
-
-$lang->en->links['zentao']['link']       = '/zentao/';
-$lang->en->links['zentao']['text']       = 'Zentao';
-$lang->en->links['zentao']['target']     = '_self';
 
 $lang->en->links['zentaopro']['link']    = '/pro/';
 $lang->en->links['zentaopro']['text']    = 'Pro version';
@@ -55,14 +47,14 @@ $clientLang = $lang->$acceptLang;
     #welcome{font-size:20px; border-bottom:1px solid #efefef; padding:10px}
     #logo{width:120px; border-right:1px solid #efefef}
    
-    #links{padding-left:110px; font-size:14px;}
+    #links{padding-left:160px; font-size:14px;}
     #links a{display:block; width:100px; height:25px; line-height:25px; float:left; margin-right:10px; border:1px solid gray; background:#efefef; text-align:center}
-    #links #zentao{background:green; color:#efefef}
+    #links #zentaopro{background:green; color:#efefef}
     
     #lang{background:#efefef; font-size:13px}
   </style>
 </head>
-<script src='../zentao/js/jquery/lib.js' type='text/javascript'></script>
+<script src='../zentaopro/js/jquery/lib.js' type='text/javascript'></script>
 <body>
   <table align='center' width='700'>
     <tr><th colspan='2' id='welcome'><?php echo $clientLang->title;?></th></tr>
