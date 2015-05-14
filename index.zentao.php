@@ -62,7 +62,7 @@ $clientLang = $lang->$acceptLang;
     #lang{background:#efefef; font-size:13px}
   </style>
 </head>
-<script src='../zentao/js/jquery/lib.js' type='text/javascript'></script>
+<script src='/zentao/js/jquery/lib.js' type='text/javascript'></script>
 <body>
   <table align='center' width='700'>
     <tr><th colspan='2' id='welcome'><?php echo $clientLang->title;?></th></tr>
